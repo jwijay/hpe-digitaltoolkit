@@ -7,9 +7,9 @@ import Button from 'grommet/components/Button';
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 
-const CLASS_ROOT = 'column';
+const CLASS_ROOT = 'one-column';
 
-export default class Column extends Component {
+export default class OneColumn extends Component {
   constructor (props) {
     super(props);
   }
@@ -84,7 +84,7 @@ export default class Column extends Component {
   }
 };
 
-Column.propTypes = {
+OneColumn.propTypes = {
   headline: PropTypes.string,
   subHeadline: PropTypes.string,
   description: PropTypes.string,
