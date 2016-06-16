@@ -21,11 +21,10 @@ export default class ColumnContent extends Component {
     let linkList;
 
     if (links) {
-      linkList = links.map(({ link, linkIcon, linkText }, key) => {
-        linkIcon = linkIcon || <LinkNextIcon />;
+      linkList = links.map(({ link, linkText }, key) => {
 
         return (
-          <Anchor href={link} icon={linkIcon} label={linkText} />
+          <Anchor href={link} primary={true} label={linkText} />
         );
       });
 
@@ -96,7 +95,6 @@ ColumnContent.propTypes = {
   icon: PropTypes.string,
   links: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string,
-    linkIcon: PropTypes.element,
     linkText: PropTypes.string
   }))
 };
