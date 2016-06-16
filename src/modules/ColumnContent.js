@@ -7,7 +7,6 @@ import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 import Image from 'grommet/components/Image';
 import Paragraph from 'grommet/components/Paragraph';
-import LinkNextIcon from 'grommet/components/icons/base/LinkNext';
 
 const CLASS_ROOT = 'column-content';
 

@@ -95,10 +95,50 @@ var ColumnDoc = React.createClass({
 
         <section>
           <h2>OneColumn Options</h2>
+          <dl>
+            <dt><code>headline            {'{string}'}</code></dt>
+            <dd>Headline of the column.</dd>
+            <dt><code>subHeadline         {'{string}'}</code></dt>
+            <dd>Content for the subtext.</dd>
+            <dt><code>description         {'{string}'}</code></dt>
+            <dd>Content for the description.</dd>
+            <dt><code>ctaText             {'{string}'}</code></dt>
+            <dd>Call to action text to display.</dd>
+            <dt><code>icon                {'{element}'}</code></dt>
+            <dd>Anchor Icon element.</dd>
+            <dt><code>link                {'{string}'}</code></dt>
+            <dd>Anchor hyperlink reference.</dd>
+            <dt><code>onClick             {'{function}'}</code></dt>
+            <dd>Click handler for the call to action Anchor.</dd>
+          </dl>
         </section>
 
         <section>
           <h2>TwoColumn Options</h2>
+          <dl>
+            <dt><code>headline            {'{string}'}</code></dt>
+            <dd>Headline of the columns.</dd>
+            <dt><code>subHeadline         {'{string}'}</code></dt>
+            <dd>Content for the subtext.</dd>
+            <dt><code>mainColumn          start|end</code></dt>
+            <dd>Set the main column to the start (66/33) or end (33/66). Defaults to 50/50.</dd>
+          </dl>
+        </section>
+
+        <section>
+          <h2>ColumnContent Options</h2>
+          <dl>
+            <dt><code>image               {'{string}'}</code></dt>
+            <dd>Url for an image.</dd>
+            <dt><code>title               {'{string}'}</code></dt>
+            <dd>Content for the title.</dd>
+            <dt><code>description         {'{string}'}</code></dt>
+            <dd>Content for the description.</dd>
+            <dt><code>icon                {'{string}'}</code></dt>
+            <dd>Url for an icon image.</dd>
+            <dt><code>links               {'[{link: string, linkText: string}, ...]'}</code></dt>
+            <dd>An array of links (objects).</dd>
+          </dl>
         </section>
 
         <section>
