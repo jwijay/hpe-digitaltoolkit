@@ -1,0 +1,31 @@
+.two-column {
+  &--50-50 {
+    .two-column__content {
+      > .box {
+        flex: 0 0 50%;
+      }
+    }
+  }
+
+  &--33-66 {
+    .two-column__content {
+      > .box:first-of-type {
+        flex: 0 0 33.3333%;
+      }
+    }
+  }
+
+  &--66-33 {
+    .two-column__content {
+      > .box:last-of-type {
+        flex: 0 0 33.3333%;
+      }
+    }
+  }
+}
+
+.column-content {
+  &__icon {
+    max-width: 140px;
+  }
+}
