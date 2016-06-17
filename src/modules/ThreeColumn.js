@@ -5,9 +5,9 @@ import classnames from 'classnames';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
-const CLASS_ROOT = 'two-column';
+const CLASS_ROOT = 'three-column';
 
-export default class TwoColumn extends Component {
+export default class ThreeColumn extends Component {
   constructor (props) {
     super(props);
   }
@@ -27,7 +27,7 @@ export default class TwoColumn extends Component {
     let subHeadlineMarkup;
     if (subHeadline) {
       subHeadlineMarkup = (
-        <Heading tag="h3" strong={true} align="center" margin="none">
+        <Heading tag="h3" align="center" margin="none">
           {subHeadline}
         </Heading>
       );
@@ -46,15 +46,10 @@ export default class TwoColumn extends Component {
   }
 
   render () {
-    const { mainColumn, colorIndex, children } = this.props;
+    const { colorIndex, children } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
-      {
-        [`${CLASS_ROOT}--50-50`]: !mainColumn,
-        [`${CLASS_ROOT}--33-66`]: mainColumn === 'end',
-        [`${CLASS_ROOT}--66-33`]: mainColumn === 'start'
-      },
       this.props.className
     );
 
@@ -70,9 +65,8 @@ export default class TwoColumn extends Component {
   }
 };
 
-TwoColumn.propTypes = {
+ThreeColumn.propTypes = {
   headline: PropTypes.string,
   subHeadline: PropTypes.string,
-  mainColumn: PropTypes.oneOf(['start', 'end']),
   colorIndex: PropTypes.string
 };
