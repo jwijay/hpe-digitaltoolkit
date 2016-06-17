@@ -29,7 +29,7 @@ export default class OneColumn extends Component {
   }
 
   render () {
-    const { headline, subHeadline, description, icon } = this.props;
+    const { headline, subHeadline, description, icon, colorIndex } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -73,7 +73,8 @@ export default class OneColumn extends Component {
     }
 
     return (
-      <Box className={classes} align="center" colorIndex="light-2" pad={{horizontal: 'small', vertical: 'medium'}}>
+      <Box className={classes} align="center" colorIndex={colorIndex}
+        pad={{horizontal: 'small', vertical: 'medium'}}>
         {iconMarkup}
         {headlineMarkup}
         {subHeadlineMarkup}
@@ -91,5 +92,6 @@ OneColumn.propTypes = {
   ctaText: PropTypes.string,
   icon: PropTypes.element,
   link: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  colorIndex: PropTypes.string
 };

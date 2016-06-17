@@ -46,7 +46,7 @@ export default class TwoColumn extends Component {
   }
 
   render () {
-    const { mainColumn, children } = this.props;
+    const { mainColumn, colorIndex, children } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -59,7 +59,8 @@ export default class TwoColumn extends Component {
     );
 
     return (
-      <Box className={classes} align="center" colorIndex="light-2" pad={{vertical: 'medium'}}>
+      <Box className={classes} align="center" colorIndex={colorIndex}
+        pad={{vertical: 'medium'}}>
         {this._renderHeader()}
         <Box className={`${CLASS_ROOT}__content`} direction="row">
           {children}
@@ -72,5 +73,6 @@ export default class TwoColumn extends Component {
 TwoColumn.propTypes = {
   headline: PropTypes.string,
   subHeadline: PropTypes.string,
-  mainColumn: PropTypes.oneOf(['start', 'end'])
+  mainColumn: PropTypes.oneOf(['start', 'end']),
+  colorIndex: PropTypes.string
 };
