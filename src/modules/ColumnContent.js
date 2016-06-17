@@ -21,7 +21,7 @@ export default class ColumnContent extends Component {
 
     if (links) {
       const linkList = links.map(({ link, linkText }, key) => {
-        return <Anchor href={link} icon={<LinkNextIcon />} label={linkText} />;
+        return <Anchor key={key} href={link} icon={<LinkNextIcon />} label={linkText} />;
       });
 
       return (
@@ -44,7 +44,10 @@ export default class ColumnContent extends Component {
 
     let imageMarkup;
     if (image) {
-      imageMarkup = <Image src={image} full="horizontal" />;
+      imageMarkup = (
+        <Box pad={{vertical: 'small'}}>
+          <Image src={image} full="horizontal" />
+        </Box>);
     }
 
     let titleMarkup;
@@ -68,8 +71,9 @@ export default class ColumnContent extends Component {
     let iconMarkup;
     if (icon) {
       iconMarkup = (
-        <img className={`${CLASS_ROOT}__icon`} src={icon} />
-      );
+        <Box pad={{vertical: 'small'}}>
+          <img className={`${CLASS_ROOT}__icon`} src={icon} />
+        </Box>);
     }
 
     return (
