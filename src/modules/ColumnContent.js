@@ -7,6 +7,7 @@ import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 import Image from 'grommet/components/Image';
 import Paragraph from 'grommet/components/Paragraph';
+import LinkNextIcon from 'grommet/components/icons/base/LinkNext';
 
 const CLASS_ROOT = 'column-content';
 
@@ -17,14 +18,10 @@ export default class ColumnContent extends Component {
 
   _renderLinks () {
     const { links } = this.props;
-    let linkList;
 
     if (links) {
-      linkList = links.map(({ link, linkText }, key) => {
-
-        return (
-          <Anchor href={link} primary={true} label={linkText} />
-        );
+      const linkList = links.map(({ link, linkText }, key) => {
+        return <Anchor href={link} icon={<LinkNextIcon />} label={linkText} />;
       });
 
       return (
