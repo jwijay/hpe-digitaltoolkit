@@ -53,7 +53,7 @@ export default class ColumnContent extends Component {
     let titleMarkup;
     if (title) {
       titleMarkup = (
-        <Heading tag="h3" strong={true}>
+        <Heading tag="h4" strong={true} margin="none">
           {title}
         </Heading>
       );
