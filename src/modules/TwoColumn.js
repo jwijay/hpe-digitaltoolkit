@@ -27,7 +27,7 @@ export default class TwoColumn extends Component {
     let subHeadlineMarkup;
     if (subHeadline) {
       subHeadlineMarkup = (
-        <Heading tag="h3" strong={true} align="center">
+        <Heading tag="h3" strong={true} align="center" margin="none">
           {subHeadline}
         </Heading>
       );
