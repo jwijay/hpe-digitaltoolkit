@@ -21,6 +21,7 @@ var DashboardDoc = require('./patterns/DashboardDoc');
 var NavigationDoc = require('./patterns/NavigationDoc');
 var MarqueeDoc = require('./components/MarqueeDoc');
 var WorldMapDoc = require('./components/WorldMapDoc');
+var CalloutDoc = require('./components/CalloutDoc');
 
 //hjjs configuration
 var hljs = require('highlight.js/lib/highlight');
@@ -51,6 +52,7 @@ var CONTENTS = [
       {route: 'develop_one-column', label: 'OneColumn', component: OneColumnDoc},
       {route: 'develop_two-column', label: 'TwoColumn', component: TwoColumnDoc},
       {route: 'develop_marquee', label: 'Marquee', component: MarqueeDoc},
+      {route: 'develop_callout', label: 'Callout', component: CalloutDoc},
       {route: 'develop_world-map', label: 'WorldMap', component: WorldMapDoc}
     ]
   }
