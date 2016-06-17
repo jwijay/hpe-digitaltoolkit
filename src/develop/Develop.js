@@ -17,6 +17,8 @@ var ActionsDoc = require('./patterns/ActionsDoc');
 var BoxDoc = require('./components/BoxDoc');
 var OneColumnDoc = require('./components/OneColumnDoc');
 var TwoColumnDoc = require('./components/TwoColumnDoc');
+var ThreeColumnDoc = require('./components/ThreeColumnDoc');
+var FourColumnDoc = require('./components/FourColumnDoc');
 var DashboardDoc = require('./patterns/DashboardDoc');
 var NavigationDoc = require('./patterns/NavigationDoc');
 var MarqueeDoc = require('./components/MarqueeDoc');
@@ -51,6 +53,8 @@ var CONTENTS = [
       {route: 'develop_box', label: 'Box', component: BoxDoc},
       {route: 'develop_one-column', label: 'OneColumn', component: OneColumnDoc},
       {route: 'develop_two-column', label: 'TwoColumn', component: TwoColumnDoc},
+      {route: 'develop_three-column', label: 'ThreeColumn', component: ThreeColumnDoc},
+      {route: 'develop_four-column', label: 'FourColumn', component: FourColumnDoc},
       {route: 'develop_marquee', label: 'Marquee', component: MarqueeDoc},
       {route: 'develop_callout', label: 'Callout', component: CalloutDoc},
       {route: 'develop_world-map', label: 'WorldMap', component: WorldMapDoc}

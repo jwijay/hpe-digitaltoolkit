@@ -3,21 +3,22 @@
 var React = require('react');
 var jsxToString = require('jsx-to-string');
 var DocsArticle = require('../../DocsArticle');
-var TwoColumn = require('../../modules/TwoColumn');
+var ThreeColumn = require('../../modules/ThreeColumn');
 var ColumnContent = require('../../modules/ColumnContent');
 var columnContentOptions = require('./ColumnContentOptions');
 
-TwoColumn.displayName = 'TwoColumn';
+ThreeColumn.displayName = 'ThreeColumn';
 
 var inlineJSX = (
-  <TwoColumn headline="Headline Text">
+  <ThreeColumn headline="Headline Text">
     <ColumnContent title="Title Text" />
     <ColumnContent title="Title Text" />
-  </TwoColumn>
+    <ColumnContent title="Title Text" />
+  </ThreeColumn>
 );
 var inline = jsxToString(inlineJSX);
 
-var TwoColumnDoc = React.createClass({
+var ThreeColumnDoc = React.createClass({
 
   contextTypes: {
     routePrefix: React.PropTypes.string.isRequired
@@ -38,12 +39,8 @@ var TwoColumnDoc = React.createClass({
   },
 
   render: function() {
-    var columnContentImage = (
-      <ColumnContent image="/docs/img/Hero4_marquee.jpg" />
-    );
-
     var columnContent = (
-      <ColumnContent icon="/docs/img/cubes.svg"
+      <ColumnContent image="/docs/img/Hero4_marquee.jpg"
         title="Manage the Rising Cost of Regulatory Compliance and Data Retention"
         description="The evolving threat environment and increased pace of business change creates costly compliance and data backup challenges. At HPE we think your data deserves better. HPE helps you adapt and stay compliant. Efficiently protect and govern your data to keep compliance costs down while saving money on regulatory fines and data loss."
         links={[
@@ -57,50 +54,29 @@ var TwoColumnDoc = React.createClass({
         ]} />
     );
 
-    var twoColumn = (
-      <TwoColumn headline="Free 1TB of Software Defined Storage"
-        subHeadline="HPE StoreVirtual VSA"
-        colorIndex="light-2">
-        {columnContentImage}
-        {columnContent}
-      </TwoColumn>
-    );
-
-    var columnThirtySixty = (
-      <TwoColumn mainColumn="end"
-        headline="Free 1TB of Software Defined Storage"
-        subHeadline="HPE StoreVirtual VSA"
-        colorIndex="light-2">
-        {columnContentImage}
-        {columnContent}
-      </TwoColumn>
-    );
-
-    var columnSixtyThirty = (
-      <TwoColumn mainColumn="start"
-        headline="Free 1TB of Software Defined Storage"
+    var threeColumn = (
+      <ThreeColumn headline="Free 1TB of Software Defined Storage"
         subHeadline="HPE StoreVirtual VSA"
         colorIndex="light-2">
         {columnContent}
-        {columnContentImage}
-      </TwoColumn>
+        {columnContent}
+        {columnContent}
+      </ThreeColumn>
     );
 
     return (
-      <DocsArticle title="TwoColumn" colorIndex="neutral-3">
+      <DocsArticle title="ThreeColumn" colorIndex="neutral-3">
 
-        <p>The TwoColumn module.</p>
+        <p>The ThreeColumn module.</p>
         <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
-          <h2>TwoColumn Options</h2>
+          <h2>ThreeColumn Options</h2>
           <dl>
             <dt><code>headline            {'{string}'}</code></dt>
             <dd>Headline of the columns.</dd>
             <dt><code>subHeadline         {'{string}'}</code></dt>
             <dd>Content for the subtext.</dd>
-            <dt><code>mainColumn          start|end</code></dt>
-            <dd>Set the main column to the start (66/33) or end (33/66). Defaults to 50/50.</dd>
             <dt><code>colorIndex          {'{category}-{index}'}</code></dt>
             <dd>The color identifier to use for the background color. For example: "neutral-1"</dd>
           </dl>
@@ -111,13 +87,11 @@ var TwoColumnDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
-          {this._renderCode('Two Column', twoColumn)}
-          {this._renderCode('Two Column - 33-66', columnThirtySixty)}
-          {this._renderCode('Two Column - 66-33', columnSixtyThirty)}
+          {this._renderCode('Three Column', threeColumn)}
         </section>
       </DocsArticle>
     );
   }
 });
 
-module.exports = TwoColumnDoc;
+module.exports = ThreeColumnDoc;
