@@ -3,16 +3,20 @@
 var React = require('react');
 var jsxToString = require('jsx-to-string');
 var DocsArticle = require('../../DocsArticle');
-var OneColumn = require('../../modules/OneColumn');
 var TwoColumn = require('../../modules/TwoColumn');
 var ColumnContent = require('../../modules/ColumnContent');
-var DownloadIcon = require('grommet/components/icons/base/Download');
 
-OneColumn.displayName = 'OneColumn';
+TwoColumn.displayName = 'TwoColumn';
 
-var inline = "<{Number}Column />";
+var inlineJSX = (
+  <TwoColumn headline="Headline Text">
+    <ColumnContent title="Title Text" />
+    <ColumnContent title="Title Text" />
+  </TwoColumn>
+);
+var inline = jsxToString(inlineJSX);
 
-var ColumnDoc = React.createClass({
+var TwoColumnDoc = React.createClass({
 
   contextTypes: {
     routePrefix: React.PropTypes.string.isRequired
@@ -33,15 +37,6 @@ var ColumnDoc = React.createClass({
   },
 
   render: function() {
-    var oneColumn = (
-      <OneColumn headline="Free 1TB of Software Defined Storage"
-        subHeadline="HPE StoreVirtual VSA"
-        description="Unlock 1TB of free storage on any new Intel-based server from any server vendor. Try it today."
-        ctaText="Get a Free 1TB VSA License"
-        link="http://www.grommet.io/docs/"
-        icon={<DownloadIcon size="large" colorIndex="brand" />} />
-    );
-
     var columnContentImage = (
       <ColumnContent image="/docs/img/Hero4_marquee.jpg" />
     );
@@ -63,7 +58,8 @@ var ColumnDoc = React.createClass({
 
     var twoColumn = (
       <TwoColumn headline="Free 1TB of Software Defined Storage"
-        subHeadline="HPE StoreVirtual VSA">
+        subHeadline="HPE StoreVirtual VSA"
+        colorIndex="light-2">
         {columnContentImage}
         {columnContent}
       </TwoColumn>
@@ -72,7 +68,8 @@ var ColumnDoc = React.createClass({
     var columnThirtySixty = (
       <TwoColumn mainColumn="end"
         headline="Free 1TB of Software Defined Storage"
-        subHeadline="HPE StoreVirtual VSA">
+        subHeadline="HPE StoreVirtual VSA"
+        colorIndex="light-2">
         {columnContentImage}
         {columnContent}
       </TwoColumn>
@@ -81,37 +78,18 @@ var ColumnDoc = React.createClass({
     var columnSixtyThirty = (
       <TwoColumn mainColumn="start"
         headline="Free 1TB of Software Defined Storage"
-        subHeadline="HPE StoreVirtual VSA">
+        subHeadline="HPE StoreVirtual VSA"
+        colorIndex="light-2">
         {columnContent}
         {columnContentImage}
       </TwoColumn>
     );
 
     return (
-      <DocsArticle title="Column" colorIndex="neutral-3">
+      <DocsArticle title="TwoColumn" colorIndex="neutral-3">
 
-        <p>The Column module.</p>
+        <p>The TwoColumn module.</p>
         <pre><code className="html hljs xml">{inline}</code></pre>
-
-        <section>
-          <h2>OneColumn Options</h2>
-          <dl>
-            <dt><code>headline            {'{string}'}</code></dt>
-            <dd>Headline of the column.</dd>
-            <dt><code>subHeadline         {'{string}'}</code></dt>
-            <dd>Content for the subtext.</dd>
-            <dt><code>description         {'{string}'}</code></dt>
-            <dd>Content for the description.</dd>
-            <dt><code>ctaText             {'{string}'}</code></dt>
-            <dd>Call to action text to display.</dd>
-            <dt><code>icon                {'{element}'}</code></dt>
-            <dd>Anchor Icon element.</dd>
-            <dt><code>link                {'{string}'}</code></dt>
-            <dd>Anchor hyperlink reference.</dd>
-            <dt><code>onClick             {'{function}'}</code></dt>
-            <dd>Click handler for the call to action Anchor.</dd>
-          </dl>
-        </section>
 
         <section>
           <h2>TwoColumn Options</h2>
@@ -122,6 +100,8 @@ var ColumnDoc = React.createClass({
             <dd>Content for the subtext.</dd>
             <dt><code>mainColumn          start|end</code></dt>
             <dd>Set the main column to the start (66/33) or end (33/66). Defaults to 50/50.</dd>
+            <dt><code>colorIndex          {'{category}-{index}'}</code></dt>
+            <dd>The color identifier to use for the background color. For example: "neutral-1"</dd>
           </dl>
         </section>
 
@@ -144,7 +124,6 @@ var ColumnDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
-          {this._renderCode('One Column', oneColumn)}
           {this._renderCode('Two Column', twoColumn)}
           {this._renderCode('Two Column - 33-66', columnThirtySixty)}
           {this._renderCode('Two Column - 66-33', columnSixtyThirty)}
@@ -154,4 +133,4 @@ var ColumnDoc = React.createClass({
   }
 });
 
-module.exports = ColumnDoc;
+module.exports = TwoColumnDoc;
