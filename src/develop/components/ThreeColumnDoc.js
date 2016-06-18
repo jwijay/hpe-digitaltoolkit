@@ -4,16 +4,20 @@ var React = require('react');
 var jsxToString = require('jsx-to-string');
 var DocsArticle = require('../../DocsArticle');
 var ThreeColumn = require('../../modules/ThreeColumn');
-var ColumnContent = require('../../modules/ColumnContent');
-var columnContentOptions = require('./ColumnContentOptions');
+var Anchor = require('grommet/components/Anchor');
+var Box = require('grommet/components/Box');
+var Heading = require('grommet/components/Heading');
+var Image = require('grommet/components/Image');
+var Paragraph = require('grommet/components/Paragraph');
+var LinkNextIcon = require('grommet/components/icons/base/LinkNext');
 
 ThreeColumn.displayName = 'ThreeColumn';
 
 var inlineJSX = (
   <ThreeColumn headline="Headline Text">
-    <ColumnContent title="Title Text" />
-    <ColumnContent title="Title Text" />
-    <ColumnContent title="Title Text" />
+    <Box>Column Content</Box>
+    <Box>Column Content</Box>
+    <Box>Column Content</Box>
   </ThreeColumn>
 );
 var inline = jsxToString(inlineJSX);
@@ -40,18 +44,21 @@ var ThreeColumnDoc = React.createClass({
 
   render: function() {
     var columnContent = (
-      <ColumnContent image="/docs/img/Hero4_marquee.jpg"
-        title="Manage the Rising Cost of Regulatory Compliance and Data Retention"
-        description="The evolving threat environment and increased pace of business change creates costly compliance and data backup challenges. At HPE we think your data deserves better. HPE helps you adapt and stay compliant. Efficiently protect and govern your data to keep compliance costs down while saving money on regulatory fines and data loss."
-        links={[
-          {
-            linkText: "Learn How to Backup with Brains to Plan, Prioritize, Automate and Predict Future Data Protection Needs",
-            link: "#"
-          }, {
-            linkText: "Learn How to Accelerate Compliance and Protect Your Business from Risk with Information Governance",
-            link: "#"
-          }
-        ]} />
+      <Box pad="small">
+        <Box pad={{vertical: 'small'}}>
+          <Image src="/docs/img/Hero4_marquee.jpg" full="horizontal" />
+        </Box>
+        <Heading tag="h4" strong={true} margin="none">
+          Manage the Rising Cost of Regulatory Compliance and Data Retention
+        </Heading>
+        <Paragraph size="medium" margin="none">
+          The evolving threat environment and increased pace of business change creates costly compliance and data backup challenges. At HPE we think your data deserves better. HPE helps you adapt and stay compliant. Efficiently protect and govern your data to keep compliance costs down while saving money on regulatory fines and data loss.
+        </Paragraph>
+        <Box pad={{vertical: 'small', between: 'small'}}>
+          <Anchor href="#" icon={<LinkNextIcon />} label="Learn How to Backup with Brains to Plan, Prioritize, Automate and Predict Future Data Protection Needs" />
+          <Anchor href="#" icon={<LinkNextIcon />} label="Learn How to Accelerate Compliance and Protect Your Business from Risk with Information Governance" />
+        </Box>
+      </Box>
     );
 
     var threeColumn = (
@@ -81,8 +88,6 @@ var ThreeColumnDoc = React.createClass({
             <dd>The color identifier to use for the background color. For example: "neutral-1"</dd>
           </dl>
         </section>
-
-        {columnContentOptions}
 
         <section>
           <h2>Examples</h2>
