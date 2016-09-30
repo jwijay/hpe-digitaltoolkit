@@ -59,6 +59,7 @@ const Primary = React.createClass({
 
     const socialFeedCard1 = (
       <Card
+        size="small"
         colorIndex="light-1"
         margin="small"
         contentPad="medium"
@@ -74,6 +75,7 @@ const Primary = React.createClass({
 
     const socialFeedCard2 = (
       <Card
+        size="small"
         colorIndex="light-1"
         margin="small"
         contentPad="medium"
@@ -89,6 +91,7 @@ const Primary = React.createClass({
 
     const socialFeedCard3 = (
       <Card
+        size="small"
         colorIndex="light-1"
         margin="small"
         contentPad="medium"
@@ -104,6 +107,7 @@ const Primary = React.createClass({
 
     const blogPostCard = (
       <Card
+        size="small"
         colorIndex="light-1"
         margin="small"
         contentPad="medium"
@@ -119,6 +123,7 @@ const Primary = React.createClass({
 
     const featuredPostCard = (
       <Card
+        size="small"
         colorIndex="light-1"
         margin="small"
         contentPad="medium"
@@ -135,9 +140,9 @@ const Primary = React.createClass({
 
     return (
       <Box className="columns-container" colorIndex="light-2"
-        pad={{horizontal: "large"}} size={{width: {max: "full"}}}>
-        <Columns size="medium" justify="center" masonry={true}
-          maxCount={3} responsive={true}>
+        pad={{horizontal: "large"}} size={{width: {max: "xxlarge"}}}>
+        <Columns size="small" justify="center" masonry={true}
+          maxCount={3} responsive={true} full={true}>
           {blogPostCard}
           {featuredPostCard}
           {socialFeedCard1}
@@ -210,7 +215,8 @@ const Primary = React.createClass({
           </Box>
         </Box>
         <Box colorIndex="light-2" pad={{vertical: "large"}} align="center">
-          <Box align="start" size={{"width": "xxlarge"}} pad={{horizontal: "large"}}>
+          <Box align="start" pad={{horizontal: "large"}} 
+            size={{width: {max: "xxlarge"}}}>
             <Heading tag="h2" strong={true}>
               Recent News
             </Heading>
